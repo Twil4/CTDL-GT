@@ -41,3 +41,38 @@ Câu lệnh for i := 1 to n do x := x + 1 có thời gian thực hiện O(n.1) =
 
 ![](/Đề%201/2c.png)
 
+# Câu 3: 
+- Thuật toán tựa C như sau: 
+```
+Ý tưởng:
+- Tạo 1 stack rỗng
+- Đọc lần lượt các phần tử từ trái qua phải
+    + Nếu là toán hạng thì đẩy vào stack
+    + Nếu là toán tử thì lấy từ stack 2 giá trị (Y và Z) sau đó áp dụng toán tử với 2 giá trị vừa lấy ra, đẩy kết quả tìm được (Z X Y) vào stack
+- Sau khi kết thúc bước trên thì giá trị trong stack là giá trị biểu thức
+```
+
+```c
+double caculate(){
+    //Giải thuật sử dụng stack S, con trỏ T bắt đầu là -1
+    do{
+        Đọc phần tử X tiếp theo của con trỏ
+        if X là toán hạng {
+            PUSH(S, T, X);
+        }else {
+            Y = POP(S, T);
+            Z = POP(S, T);
+            W = Z X Y; //Thực hiện phép tính X
+            PUSH(S, T, X);
+        }
+    }while(Gặp ký tự '\0');
+    R = POP(S, T);
+    printf(R);
+}
+```
+
+- Code chi tiết có thể xem tại [đây](/Đề%201/cau3.c)
+
+![](/Đề%201/c4.png)
+
+# Câu 5: 
