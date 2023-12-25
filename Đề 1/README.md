@@ -24,15 +24,15 @@ Câu lệnh for i := 1 to n do x := x + 1 có thời gian thực hiện O(n.1) =
 - Chọn chốt là 5:
 + i = 2 < 5 => i = 26 > 5 -> Dừng
 + j = 9 < 5.
-+ Vì i > j => Đổi chỗ 26 với 9 ta được chuỗi sau: 5  2  9  7  4  25 26. 9 > 5 => Dừng
++ Vì i > j => Đổi chỗ 26 với 9 ta được chuỗi sau: ***5  2  9  7  4  25 26***. 9 > 5 => Dừng
 
 - Tiếp tục lặp lại
 + i = 2 < 5 => i = 9 > 5
 + j = 26 > 5 => j = 25 => 5 => j = 4 < 5
-+ Vì i > j => Đổi chỗ 9 và 4 ta được chuỗi sau: 5  2  4  7  9  25  26
-+ Vì j = 4 < 5 nên đổi chỗ cho chốt 5 ta được chuỗi sau: 4  2  5  7  9  25  26
++ Vì i > j => Đổi chỗ 9 và 4 ta được chuỗi sau: ***5  2  4  7  9  25  26***
++ Vì j = 4 < 5 nên đổi chỗ cho chốt 5 ta được chuỗi sau: ***4  2  5  7  9  25  26***
 
 - Tiếp tục lặp lại
 + i = 2 < 4 => i = 5 > 4
 + j = 26 > 4 => j = 25 > 4 => j = 9 > 4 => j = 7 > 4 => j = 5 > 4 => j = 2 < 4
-+ Vì i = j = 2 < 4 (chốt) nên đổi chỗ với chốt ta được chuỗi sau: 2  4  5  7  9  25  26
++ Vì i = j = 2 < 4 (chốt) nên đổi chỗ với chốt ta được chuỗi sau: ***2  4  5  7  9  25  26***
