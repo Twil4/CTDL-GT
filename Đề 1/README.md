@@ -76,3 +76,60 @@ double caculate(){
 ![](/Đề%201/c4.png)
 
 # Câu 5: 
+```
+Ý tưởng:
+- Tìm kiếm X xem có trên cây không. Nếu tìm thấy thì trỏ P vào nút cần xóa
+    + Nếu P là nút lá thì chỉ cần đem mối nối cũ trỏ tới node P (node cha của P) trỏ về null và giải phóng P
+    + Nếu P là nút nửa lá (chỉ có 1 nhánh trái hoặc nhánh phải) thì nút thay thế P là nút gốc của nhánh con đó. Khi đó ta điều chỉnh mối nối như sau: Mối nối trỏ tới P (nút cha của P) trỏ tới nút gốc của nhánh con của P, sau đó giải phóng P
+    + Nếu P là nút có đầy đủ 2 nhánh thì nút thay thế P là nút lớn nhất thuộc cây con trái hoặc nút bé nhất của cây con phải. Khi đó thay vì xóa nút P thì lấy giá trị của nút thay thế thay vào giá trị nút P rồi xóa nút thây thế
+```
+
+- Code tựa C như sau:
+```c
+XOA_NUT(T, P){
+    P = T;Q = NULL; //Vể sau P trỏ sang nút khác, Q luôn giữ là nút cha của P
+    //Kiểm tra X có trong cây T không
+    while(P != NULL){
+        if(P->KEY == X){ //Tìm thấy X
+            break;
+        }
+        Q = P; // Luôn giữ Q là nút cha của P
+        if(x < P->KEY){
+            P = P->P_L;
+        }else{
+            P = P->P_R;
+        }
+    }
+    //Nếu X không được tìm thấy
+    if(P = NULL){
+        break;
+    }
+    //P có đầy đủ 2 nhánh
+    if(P->P_L != NULL && P->P_R != NULL){
+        //Tìm nút cực phải của cây con trái làm nút thay thế
+        Node = P; //Ghi nhớ nút cần xóa
+        Q = P; P = P->P_L; //Chuyển sang cây con trái tìm nút lớn nhất
+        while(P->P_R != NULL){
+            Q = P;
+            P = P->P_R;
+        }
+        Node->KEY = P->KEY; //Chuyển key lên nút cần xóa
+    }
+    //Nút bây giờ cần xóa là nút P có 1 nhánh hoặc không có gì. Xử lý như này sẽ xử lý luôn 2 th kia
+    if(P->P_L != NULL){
+        Child = P->P_L;
+    }else {
+        Child = P->P_R;
+    }
+    if(P == T){
+        T = Child;
+    }else {
+        if(Q->P_L == P){
+            Q->P_L = Child;
+        }else {
+            Q->P_R = Child;
+        }
+    }
+    free(P);
+}
+```
