@@ -36,3 +36,8 @@ Câu lệnh for i := 1 to n do x := x + 1 có thời gian thực hiện O(n.1) =
 + i = 2 < 4 => i = 5 > 4
 + j = 26 > 4 => j = 25 > 4 => j = 9 > 4 => j = 7 > 4 => j = 5 > 4 => j = 2 < 4
 + Vì i = j = 2 < 4 (chốt) nên đổi chỗ với chốt ta được chuỗi sau: ***2  4  5  7  9  25  26***
+
+# Câu 2: c,
+
+![](/Đề%201/2c.png)
+
