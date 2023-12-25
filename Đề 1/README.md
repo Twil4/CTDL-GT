@@ -8,4 +8,14 @@ Ví dụ: 1 chương trình có 3 bước thực hiện mà thời gian thực h
 - Quy tắc nhân: Nếu tương ứng với P1, P2 là T1(n) = O(f(n)), T2(n) = O(g(n)) thì thời gian thực hiện P1 và P2 lồng nhau sẽ là: T1(n)T2(n) = O(f(n)g(n)).
 
 - Ví dụ: Cho câu lệnh gán x := x + 1 có thời gian thực hiện bằng c(hằng số) nên được đánh giá là O(1)
+
 Câu lệnh for i := 1 to n do x := x + 1 có thời gian thực hiện O(n.1) = O(n)
+
+# Câu 2: a,
+
+- Duyệt trước: A -> C -> G -> F -> B -> E -> I -> D -> H
+
+- Duyệt giữa: G -> C -> F -> A -> I -> E -> B -> D -> H
+
+- Duyệt sau: G -> F -> C -> I -> E -> H -> D -> B -> A
+
