@@ -94,7 +94,7 @@ XOA_NUT(T, P){
             break;
         }
         Q = P; // Luôn giữ Q là nút cha của P
-        if(x < P->KEY){
+        if(X < P->KEY){
             P = P->P_L;
         }else{
             P = P->P_R;
