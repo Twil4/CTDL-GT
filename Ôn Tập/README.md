@@ -32,3 +32,30 @@ THEMNUT(Pdau, Pcuoi, Q, X){
     }
 }
 ```
+
+# Loại bỏ nút Q trong danh sách
+
+Ý tưởng:
+- Kiểm tra danh sách có null không? Null thì dừng
+- Kiểm tra nút xóa phải nút đầu tiên không. Nếu đúng thì thay đổi Pdau = Q->P_R
+- Kiểm tra nút xóa phải nút cuối cùng không. Nếu đúng thì Pcuoi = Q->P_L
+- Trường hợp còn lại là một tỏng những nút còn lại
+
+```c
+XOA_NUT(Pdau, Pcuoi, Q){
+    if(Pcuoi == NULL){
+        print("Danh sach rong");
+    }else {
+        if(Q == Pdau){
+            Pdau = Q->P_R;
+            Pdau->P_L = NULL;
+        }else if(Q == Pcuoi){
+            Pcuoi = Q->P_L;
+            Pcuoi->P_R = NULL;
+        }else {
+            Q->P_L->P_R = Q->P_R;
+            Q->P_R->P_L = Q->L;
+        }
+    }
+}
+```
